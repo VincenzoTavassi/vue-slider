@@ -40,24 +40,19 @@
         <h1>JS Objects Carousel</h1>
         <div class="row">
           <div class="col-10 main-container p-0">
-            <div id="carousel-container" v-for="(game, indice) of games">
+            <div id="carousel-container">
               <img
                 @mouseover="stopResume()"
                 @mouseleave="stopResume()"
-                v-if="indice == activeImage"
-                :src="'./' + game.image"
+                :src="'./' + games[activeImage].image"
                 alt=""
                 srcset=""
               />
               <div id="carousel-text">
-                <h2
-                  v-if="indice == activeImage"
-                  id="img-title"
-                  class="display-3 fw-bold"
-                >
-                  {{game.title}}
+                <h2 id="img-title" class="display-3 fw-bold">
+                  {{games[activeImage].title}}
                 </h2>
-                <p v-if="indice == activeImage">{{game.text}}</p>
+                <p>{{games[activeImage].text}}</p>
               </div>
             </div>
             <i
