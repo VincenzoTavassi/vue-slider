@@ -53,9 +53,11 @@ createApp({
       if (this.autoPlayWorking) {
         clearInterval(slidePlay);
         this.autoPlayWorking = false;
+        console.log(this.autoPlayWorking);
       } else {
         this.autoPlay();
         this.autoPlayWorking = true;
+        console.log(this.autoPlayWorking);
       }
     },
     autoPlay() {

@@ -42,12 +42,12 @@
           <div class="col-10 main-container p-0">
             <div id="carousel-container" v-for="(game, indice) of games">
               <img
+                @mouseover="stopResume()"
+                @mouseleave="stopResume()"
                 v-if="indice == activeImage"
                 :src="'./' + game.image"
                 alt=""
                 srcset=""
-                @mouseover="stopResume()"
-                @mouveleave="stopResume()"
               />
               <div id="carousel-text">
                 <h2
